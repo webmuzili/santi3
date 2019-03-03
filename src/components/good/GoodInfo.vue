@@ -27,19 +27,20 @@
 				</div>
 				<div class="mui-card-footer">
                         <mt-button type="primary" size="small">立即购买</mt-button>
-                        <mt-button type="danger" size="small">加入购物车</mt-button>
+                        <mt-button type="danger" size="small" @click="addCart">加入购物车</mt-button>
                 </div>
 			</div>
     </div>
 </template>
 <script>
 import Swipe from '../sub/swipe'
-
+import {Toast} from "mint-ui"
 export default {
     data(){
         return{
             list:'',
-            val:1
+            val:1,
+            nid:this.$route.params.id
         }
     },
     methods:{
@@ -58,6 +59,19 @@ export default {
             if(this.val<999){
                 this.val++
             }
+        },
+        addCart(){
+            var pid=this.nid
+            var count=this.val
+            var uid=3
+            var url=`${this.$store.state.apiUrl}/addCart?pid=${pid}&count=${count}&uid=${uid}`
+            this.$axios(url).then((res)=>{
+                if(res.data.code=1){
+                    Toast("加入购物车成功！")
+                }else{
+                    Toast("加入购物车失败！")
+                }
+            })
         }
     },
     created(){

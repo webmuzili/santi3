@@ -5,14 +5,14 @@
       <router-view/>
       <!-- 底部tabar -->
       <nav class="mui-bar mui-bar-tab">
-			<a class="mui-tab-item mui-active" href="#tabbar">
+			<router-link class="mui-tab-item mui-active" to="/Home">
 				<span class="mui-icon mui-icon-home"></span>
 				<span class="mui-tab-label">首页</span>
-			</a>
-			<a class="mui-tab-item" href="#tabbar-with-chat">
+			</router-link>
+			<router-link class="mui-tab-item" to="/login">
 				<span class="mui-icon mui-icon-contact"></span>
 				<span class="mui-tab-label">会员</span>
-			</a>
+			</router-link>
 			<a class="mui-tab-item" href="#tabbar-with-contact">
 				<span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge">9</span></span>
 				<span class="mui-tab-label">购物车</span>

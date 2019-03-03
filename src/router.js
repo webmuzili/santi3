@@ -6,6 +6,7 @@ import NewList from './components/news/Newslist'
 import NewsInfo from './components/news/NewsInfo'
 import GoodList from './components/good/GoodList'
 import GoodInfo from './components/good/GoodInfo'
+import Login from './components/login/Login'
 
 Vue.use(Router)
 
@@ -16,6 +17,9 @@ export default new Router({
     {
       path: '/',
       redirect:'/Home'
+    },
+    {
+      path:'/login',component:Login
     },
     {
       path:'/test',component:Test
