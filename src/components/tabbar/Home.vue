@@ -2,11 +2,7 @@
     <div id="home-app">
         <!-- 顶部导航栏 -->
         <!-- 轮播图显示 -->
-        <mt-swipe :auto="4000" >
-            <mt-swipe-item v-for="item in list" :key="item.id">
-                <img :src="item.img_url" />
-            </mt-swipe-item>
-        </mt-swipe>
+        <swipe :list="list"></swipe>
         <!-- 九宫格 -->
         <ul class="mui-table-view mui-grid-view mui-grid-9">
 		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" v-for="item in list1" :key="item.id">
@@ -20,6 +16,7 @@
     </div>
 </template>
 <script>
+import Swipe from '../sub/swipe'
 export default {
    data(){
        return{
@@ -36,17 +33,14 @@ export default {
           this.$axios.get(url1).then((res)=>{
            this.list1=res.data
            })
+   },
+   components:{
+       "swipe":Swipe
    }
 }
 </script>
 <style lang='scss'>
     #home-app{
-        .mint-swipe{
-            height:152px;
-            img{
-                width:100%;
-            }
-        }
         .mui-grid-view .mui-table-view-cell{
             background-color: #fff;
             border:0;

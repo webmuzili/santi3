@@ -5,6 +5,7 @@ import HomeIndex from './components/tabbar/Home'
 import NewList from './components/news/Newslist'
 import NewsInfo from './components/news/NewsInfo'
 import GoodList from './components/good/GoodList'
+import GoodInfo from './components/good/GoodInfo'
 
 Vue.use(Router)
 
@@ -21,6 +22,9 @@ export default new Router({
     },
     {
       path:'/goodlist',component:GoodList
+    },
+    {
+      path:'/goodinfo/:id',component:GoodInfo
     },
     {
       path:'/news',component:NewList

@@ -37,6 +37,10 @@ Vue.filter('dateFilter',function(val){
       return `${y}-${m}-${d} ${h}:${mi}:${s}`
 })
 
+Vue.filter("money",function(val){
+    return '￥'+val
+})
+
 new Vue({
   router,
   store,
