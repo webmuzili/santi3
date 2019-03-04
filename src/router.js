@@ -7,6 +7,8 @@ import NewsInfo from './components/news/NewsInfo'
 import GoodList from './components/good/GoodList'
 import GoodInfo from './components/good/GoodInfo'
 import Login from './components/login/Login'
+import Cart from './components/tabbar/Cart'
+import Search from './components/tabbar/Search'
 
 Vue.use(Router)
 
@@ -38,6 +40,12 @@ export default new Router({
     },
     {
       path:'/Home',component:HomeIndex
+    },
+    {
+      path:'/cart',component:Cart
+    },
+    {
+      path:'/search',component:Search
     },
     {
       path: '/about',

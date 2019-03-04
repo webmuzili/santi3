@@ -43,6 +43,20 @@ Vue.filter("money",function(val){
     return '￥'+val
 })
 
+//获取购物车会标的数量
+Vue.prototype.$getCarIcon=function(){
+  var list=""
+  var url= `${this.$store.state.apiUrl}/getCarts?uid=3`
+  this.$axios(url).then((res,list)=>{
+      list=res.data.data
+      var sumCount=0
+      for(var d of list){
+        sumCount+=d.count;
+        }
+      this.$store.commit('add',sumCount)
+  })
+}
+
 new Vue({
   router,
   store,

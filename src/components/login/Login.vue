@@ -33,6 +33,7 @@ export default {
                 if(res.data.code==1){
                     Toast("登录成功！")
                     this.$router.push("/Home")
+                    this.$getCarIcon()
                 }else if(res.data.code==-1){
                     Toast("登录失败!")
                     this.uname=""

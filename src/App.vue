@@ -13,17 +13,33 @@
 				<span class="mui-icon mui-icon-contact"></span>
 				<span class="mui-tab-label">会员</span>
 			</router-link>
-			<a class="mui-tab-item" href="#tabbar-with-contact">
-				<span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge">9</span></span>
+			<router-link class="mui-tab-item" to="/cart">
+				<span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge">{{$store.getters.showCarCount}}</span></span>
 				<span class="mui-tab-label">购物车</span>
-			</a>
-			<a class="mui-tab-item" href="#tabbar-with-map">
+			</router-link>
+			<router-link class="mui-tab-item" to="/search">
 				<span class="mui-icon mui-icon-search"></span>
 				<span class="mui-tab-label">搜索</span>
-			</a>
+			</router-link>
 		</nav>
   </div>
 </template>
+<script>
+export default {
+  mounted(){
+    var nav=document.getElementsByClassName("mui-bar mui-bar-tab")[0]
+    var a=nav.getElementsByTagName('a')
+    for(var i=0;i<a.length;i++){
+      a[i].onclick=function(){
+          for(var j=0;j<a.length;j++){
+            a[j].className='mui-tab-item'
+          }
+          this.className='mui-tab-item mui-active'
+      }
+    }
+  }
+}
+</script>
 
 <style lang="scss">
 #app {

@@ -68,6 +68,7 @@ export default {
             this.$axios(url).then((res)=>{
                 if(res.data.code=1){
                     Toast("加入购物车成功！")
+                    this.$getCarIcon()
                 }else{
                     Toast("加入购物车失败！")
                 }
