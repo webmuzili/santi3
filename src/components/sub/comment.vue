@@ -59,6 +59,7 @@ export default {
               var obj= res.data
                if(obj.code=1){
                    Toast("评论发表成功")
+                    //发表评论成功后，将当前页码和内容重新归零,重新请求评论数据，渲染页面
                    this.pno=0
                    this.list=[]
                    this.msg=""

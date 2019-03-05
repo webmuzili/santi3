@@ -30,7 +30,7 @@ export default {
        this.$axios.get(url).then((res)=>{
            this.list=res.data
            })
-          this.$axios.get(url1).then((res)=>{
+       this.$axios.get(url1).then((res)=>{
            this.list1=res.data
            })
    },

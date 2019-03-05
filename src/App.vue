@@ -1,7 +1,7 @@
 <template>
   <div id="app">
       <!-- 顶部导航栏 -->
-        <mt-header class="header" fixed title="坚果商城"></mt-header>
+      <mt-header class="header" fixed title="坚果商城"></mt-header>
       <router-view/>
       <!-- 底部tabar -->
       <nav class="mui-bar mui-bar-tab">
@@ -27,6 +27,7 @@
 <script>
 export default {
   mounted(){
+    //利用排他,设置当前激活的状态
     var nav=document.getElementsByClassName("mui-bar mui-bar-tab")[0]
     var a=nav.getElementsByTagName('a')
     for(var i=0;i<a.length;i++){
@@ -48,6 +49,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  // 利用padding给单页面应用程序留出足够的空间
   padding-top:40px;
   padding-bottom: 50px;
 }

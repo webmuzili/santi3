@@ -56,6 +56,7 @@ export default {
             })
         },
         carSub(e){
+            // 从MVVM的 V层到M层匹配，找到后，修改M层数据，达到动态相应的效果 
             var iid=e.target.dataset.iid
             for(var item of this.list){
                      if(item.iid==iid&& item.count>1){
@@ -64,11 +65,11 @@ export default {
                          break 
                     }
              }
-             var sumCount=0
-             for(var a of this.list){
-                 sumCount+=a.count;
-             }
-            this.$store.commit('add',sumCount)
+            //  var sumCount=0
+            //  for(var a of this.list){
+            //      sumCount+=a.count;
+            //  }
+            // this.$store.commit('add',sumCount)
         },
         carAdd(e){
             var iid=e.target.dataset.iid
@@ -79,17 +80,19 @@ export default {
                          break
                     }
              }
-            var sumCount=0
-             for(var b of this.list){
-                 sumCount+=b.count;
-             }
-            this.$store.commit('add',sumCount)
+             //此处有生命周期钩子函数后，可以省略
+            // var sumCount=0
+            //  for(var b of this.list){
+            //      sumCount+=b.count;
+            //  }
+            // this.$store.commit('add',sumCount)
         }
     },
     created(){
         this.getMore()
     },
     updated(){
+        //页面一有dom元素的会执行该生命周期钩子函数
         var sumCount=0
         for(var c of this.list){
             sumCount+=c.count;
@@ -97,6 +100,7 @@ export default {
         this.$store.commit('add',sumCount)
     },
     computed:{
+        //计算属性
         getToal(){
             var sum=0
             for(var item of this.list){

@@ -44,6 +44,10 @@ export default {
     methods:{
         handleSeach(){
             var kw=this.keyword;
+            if(!kw){
+                Toast("输入不能为空")
+                return 
+            }
             var low=this.low;
             var high=this.high
             if(low==""){

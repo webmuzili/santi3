@@ -5,6 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+      //设置全局的url可以方便后期的维护
       apiUrl:"http://192.168.1.185:3000",
       cartCount:0
   },

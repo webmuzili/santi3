@@ -12,13 +12,16 @@ Vue.component(Swipe.name, Swipe);
 Vue.component(SwipeItem.name, SwipeItem)
 Vue.component(Button.name, Button)
 
+//注意这个css文件在build时回报错,解决:在文件中把含有'svg'外面的单引号,改为双引号
 import './lib/mui/css/mui.css'
 import './lib/mui/css/icons-extra.css'
 
- axios.defaults.withCredentials=true
+//设置axios可以携带储存session的id
+axios.defaults.withCredentials=true
 
 Vue.prototype.$axios=axios
 
+//时间过滤器
 Vue.filter('dateFilter',function(val){
       var date=new Date(val);
       var y=date.getFullYear();
@@ -38,7 +41,7 @@ Vue.filter('dateFilter',function(val){
 
       return `${y}-${m}-${d} ${h}:${mi}:${s}`
 })
-
+//货币过滤器
 Vue.filter("money",function(val){
     return '￥'+val
 })

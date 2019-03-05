@@ -36,6 +36,7 @@ export default {
 			// 开始发送请求
 			var url=`${this.$store.state.apiUrl}/newslist?pno=${this.pno}&pageSize=${this.pageSize}`;
 			this.$axios(url).then(res=>{
+				//将现有的数据与请求过来的新数据结合成一个新数据，在进行渲染，实现点击加载更多的效果
 				var rows=this.list.concat(res.data.data);
 				this.list=rows;
 				this.pageCount=res.data.pageCount
